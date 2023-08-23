@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 
 public class InputOutputStream {
 
@@ -13,6 +14,7 @@ public class InputOutputStream {
 		byteArrayInputStream1();
 		fileInputStream1();
 		objectInputOutputStream();
+		printStream1();
 	}
 	
 	private static void byteArrayInputStream1() {
@@ -79,6 +81,16 @@ public class InputOutputStream {
 		}
 				
 		
+	}
+	
+	private static void printStream1() {
+		System.out.println("\nprintStream1:");
+		String fileName = "output.txt";
+		try (PrintStream ps = new PrintStream(fileName)) {
+			ps.println("Hi there!");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 }
