@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class InputOutputStream {
 
@@ -15,6 +16,7 @@ public class InputOutputStream {
 		fileInputStream1();
 		objectInputOutputStream();
 		printStream1();
+		scanner1();
 	}
 	
 	private static void byteArrayInputStream1() {
@@ -91,6 +93,14 @@ public class InputOutputStream {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+	
+	private static void scanner1() {
+		System.out.println("\nscanner1()");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("입력하세요:");
+		String line = sc.nextLine();
+		System.out.println(line);
 	}
 
 }
