@@ -1,11 +1,13 @@
 package com.oraclejava.learnjava.fundamentals;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 
 public class InputOutputStream {
 
 	public static void main(String[] args) {
 		byteArrayInputStream1();
+		fileInputStream1();
 	}
 	
 	private static void byteArrayInputStream1() {
@@ -22,6 +24,19 @@ public class InputOutputStream {
 			int data;
 			while ((data = bais.read()) != -1) {
 				System.out.print((char)data + " ");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	private static void fileInputStream1() {
+		System.out.println("\nfileInputStream1:");
+		String file = "d:/down/hello.txt";
+		try(FileInputStream fis = new FileInputStream(file)) {
+			int data;
+			while ((data = fis.read()) != -1) {
+				System.out.print(((char)data) + " ");
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
